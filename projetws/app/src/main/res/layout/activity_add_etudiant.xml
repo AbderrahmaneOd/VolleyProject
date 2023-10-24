@@ -69,5 +69,10 @@
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add" />
+        android:text="Ajouter un etudiant" />
+    <Button
+        android:id="@+id/idShowStudentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afficher la list des etudiants" />
 </LinearLayout>

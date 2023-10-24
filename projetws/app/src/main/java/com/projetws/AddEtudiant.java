@@ -2,6 +2,8 @@ package com.projetws;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +38,7 @@ public class AddEtudiant extends AppCompatActivity implements View.OnClickListen
     private RadioButton m;
     private RadioButton f;
     private Button add;
+    private Button showStudentList;
     RequestQueue requestQueue;
     String insertUrl = "http://192.168.11.225/tpVolleyProjet/ws/createEtudiant.php";
 
@@ -50,6 +53,15 @@ public class AddEtudiant extends AppCompatActivity implements View.OnClickListen
         m = (RadioButton) findViewById(R.id.m);
         f = (RadioButton) findViewById(R.id.f);
         add.setOnClickListener(this);
+        showStudentList = findViewById(R.id.idShowStudentList);
+
+        showStudentList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddEtudiant.this, EtudiantList.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
